@@ -89,8 +89,7 @@ i{
 }
 
 .icon-container.flex i{
-    padding-right: 0.5rem ;
-    
+    padding-right: 0.5rem ;   
 }
 
 /* notifiche */
@@ -111,7 +110,6 @@ i{
 #notification-square i{
     color: #8edafc;
     transform: translate(50%, 50%);
-
 }
 
 .notification.flex .container-notification {
@@ -119,8 +117,7 @@ i{
 }
 
 #notification-on-off .text{
-    color:#4e7484;
-    
+    color:#4e7484;  
 }
 
 /* ricerca nella chat */
@@ -132,7 +129,6 @@ i{
     text-align: center;
     background-color: white;
     color: #b7b9bb;
-
 }
 
 #search-barr{
@@ -154,9 +150,7 @@ i{
 .chat-square{
     width: 40px;
     height: 40px;
-    background-color: yellow;
     border-radius: 50%;
-    
 }
 
 .chat-user{
@@ -210,8 +204,6 @@ i{
     align-self: flex-end;
     margin-right: 0.3rem;
     border-radius: 10px;
-   
-   
 }
 
 .received {
@@ -223,7 +215,6 @@ i{
     align-self: flex-start;
     margin-left: 0.3rem;
     border-radius: 10px;
-
 }
 
 
