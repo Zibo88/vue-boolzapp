@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <!-- vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Milestone1</title>
+
+</head>
+<body>
+    <div id="root">
+        <div class="screen-container">
+            <!-- container dell'app -->
+            <div class="app-container flex">
+                <!-- colonna piccola -->
+               <div id="small-column">
+                    <!-- nome utente -->
+                    <div class="user-card flex">
+                       <div class="user-img flex">
+                            <img src="./img/avatar_io.jpg" alt="user-image">
+                            <div class="name">[Nome utente]</div>
+                       </div>
+                       <div class="icon-container flex">
+                        <i class="far fa-circle"></i>
+                        <i class="fas fa-comment-alt"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                       </div>
+                       
+                    </div>
+
+                    <!-- attivare le notifiche -->
+                    <div class="notification flex">
+                        <div id="notification-square">
+                            <i class="fas fa-bell-slash"></i>
+                        </div>
+                        
+                        <div class="container-notification">
+                            <div class="bold">
+                                Ricevi notifiche dei nuovi messaggi
+                            </div>
+                           
+                            <div id="notification-on-off">
+                                <a class="text" href="#">
+                                    attivita notifiche desktop
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ricerca nella chat -->
+                    <div class="search flex">
+                        <div class="lens">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <input id="search-barr" type="text" placeholder="Cerca nella chat">
+                    </div>
+                    <!-- chat -->
+                    <div class="chat-card flex">
+                        <div class="chat-square">
+                             <!-- da modificare -->
+                            <img class="avatar-img" src="./img/avatar_1.jpg" alt="primo utente">
+                        </div>
+                        <!-- nome utente -->
+                        <div class="chat-user">[Nome utente]</div>
+                    </div>
+               </div>
+               <!-- colonna grande -->
+               <div id="big-column">
+                    <div class="user-card flex">
+                        <!-- sender container -->
+                        <div class="user-img flex">
+                            <img src="./img/avatar_io.jpg" alt="user-image">
+                            <div class="name">[Nome utente]</div> 
+                            <div class=" last-access text">ultimo accesso oggi alle </div>
+                        </div>
+                        <!-- icone -->
+                        <div class="icon-container flex">
+                        <i class="far fa-circle"></i>
+                        <i class="fas fa-comment-alt"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                        </div> 
+                    </div>
+                    
+                    
+                    <div class="chat-window">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam fugiat, voluptates in esse odit quasi. Exercitationem, quasi architecto facere quibusdam voluptatum sapiente similique praesentium ex molestiae iusto qui enim natus!
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est consequatur temporibus minima ab rem, ex reprehenderit quo, sit laudantium autem ipsa aliquid quidem tempore odio eligendi impedit vitae cumque quasi?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis est tempora, cumque unde repellat minus voluptatum ducimus nemo laboriosam adipisci nostrum ex, officia, natus labore quod doloribus placeat optio sed.
+                        Temporibus ab placeat ducimus delectus modi id atque, vero deleniti velit, a doloremque eveniet voluptatum, amet minus. Doloribus, provident laborum ipsum, accusamus enim molestiae hic vitae repellendus, veniam sapiente accusantium?
+                    </div>
+
+                    <div class="send-message flex">
+                        <i id="smile" class="fas fa-smile"></i>
+                        <input type="text" name="" id="message-bar" placeholder="Scrivi un messagio">
+                        <i id="microphone" class="fas fa-microphone"></i>
+                    </div>
+                    
+                
+               </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="./js/script.js"></script>
+</body>
+</html>

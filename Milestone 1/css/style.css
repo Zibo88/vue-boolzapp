@@ -1,0 +1,177 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* COMMON */
+.flex {
+    display: flex;
+}
+
+.avatar-img{
+    width: 40px;
+    border-radius: 50%;
+}
+
+.text{
+    font-size: 12px;
+}
+
+.bold{
+    font-weight: 800;
+    font-size: 13px;
+}
+
+/* Container */
+.screen-container {
+    height: 100vh;
+    padding: 2rem;
+
+    /* test */
+    background-color: aqua;
+}
+
+.app-container {
+    width: 85%;
+    margin: 0 auto;
+    padding: 0.3rem;
+    background-color: #eaeaea;
+}
+
+/* Colonne */
+
+#small-column{
+    width: 35%;
+    border: 1px solid grey;
+}
+
+#big-column {
+    width: 65%;
+    padding-left: 0.5rem;
+}
+
+/* COLONNA PICCOLA */
+/* user avatar */
+
+.user-card.flex{
+    justify-content: space-between;
+    margin-bottom: 0.2rem;
+}
+
+.user-img.flex{
+    width: 50%;
+    align-items: center;
+}
+
+.user-img.flex img{
+    width: 40px;
+    border-radius: 50%; 
+}
+
+.name{
+    padding-left: 0.7rem;
+}
+
+/* icone */
+.icon-container.flex{
+    align-items: center;
+    text-align: right;
+}
+
+.icon-container.flex i{
+    padding-right: 0.5rem ;
+    
+}
+
+/* notifiche */
+.notification.flex{
+    align-items: center;
+    padding: 0.6rem 0;
+    background-color: #8edafc;
+    padding: 0.6rem;
+}
+
+#notification-square{
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+#notification-square i{
+    color: #8edafc;
+    transform: translate(50%, 50%);
+
+}
+
+.notification.flex .container-notification {
+   padding-left: 0.5rem;
+}
+
+#notification-on-off .text{
+    color:#4e7484;
+    
+}
+
+/* ricerca nella chat */
+.search.flex{
+    padding: 0.4rem;
+}
+.lens{
+    width: 8%;
+    text-align: center;
+    background-color: white;
+    color: #b7b9bb;
+
+}
+
+#search-barr{
+    width: 92%;
+    border: none;
+    color: #b7b9bb;
+}
+
+/* chat */
+.chat-card.flex{
+    align-items: center;
+    padding: 0.5rem;
+    background-color: white;
+}
+
+.chat-square{
+    width: 40px;
+    height: 40px;
+    background-color: yellow;
+    border-radius: 50%;
+    
+}
+
+.chat-user{
+    padding-left: 0.5rem;
+}
+
+/* COLONNA GRANDE */
+
+.chat-window {
+    background-image: url(../img/mine.jpg);
+    flex-grow: 2;
+}
+
+.send-message.flex{
+    background-color: #eaeaea;
+    padding: 1rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#message-bar{
+    width: 90%;
+    height: 31px;
+}
+
+.send-message.flex i{
+    color: #b7b9bb;
+}
+
+
