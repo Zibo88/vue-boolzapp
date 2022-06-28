@@ -18,7 +18,7 @@
             <!-- container dell'app -->
             <div class="app-container flex">
                 <!-- colonna piccola -->
-               <div id="small-column">
+               <div class="small-column flex">
                     <!-- nome utente -->
                     <div class="user-card flex">
                        <div class="user-img flex">
@@ -60,17 +60,17 @@
                         <input id="search-barr" type="text" placeholder="Cerca nella chat">
                     </div>
                     <!-- chat -->
-                    <div class="chat-card flex">
+                    <div v-for="singleObject in contacts" class="chat-card flex">
                         <div class="chat-square">
                              <!-- da modificare -->
-                            <img class="avatar-img" src="./img/avatar_1.jpg" alt="primo utente">
+                            <img class="avatar-img" :src="'img/avatar' + singleObject.avatar + '.jpg'" alt="primo utente">
                         </div>
                         <!-- nome utente -->
-                        <div class="chat-user">[Nome utente]</div>
+                        <div class="chat-user">{{singleObject.name}}</div>
                     </div>
                </div>
                <!-- colonna grande -->
-               <div id="big-column">
+               <div class="big-column flex">
                     <div class="user-card flex">
                         <!-- sender container -->
                         <div class="user-img flex">
@@ -87,11 +87,10 @@
                     </div>
                     
                     
-                    <div class="chat-window">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam fugiat, voluptates in esse odit quasi. Exercitationem, quasi architecto facere quibusdam voluptatum sapiente similique praesentium ex molestiae iusto qui enim natus!
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est consequatur temporibus minima ab rem, ex reprehenderit quo, sit laudantium autem ipsa aliquid quidem tempore odio eligendi impedit vitae cumque quasi?
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis est tempora, cumque unde repellat minus voluptatum ducimus nemo laboriosam adipisci nostrum ex, officia, natus labore quod doloribus placeat optio sed.
-                        Temporibus ab placeat ducimus delectus modi id atque, vero deleniti velit, a doloremque eveniet voluptatum, amet minus. Doloribus, provident laborum ipsum, accusamus enim molestiae hic vitae repellendus, veniam sapiente accusantium?
+                    <div class="chat-window flex">
+                       <div class="send">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa excepturi nulla sit nesciunt facere voluptatum ut, tenetur tempore sequi officia quam numquam amet, et commodi voluptate sint esse corrupti minus!</div>
+                       <div class="received">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur nostrum sit excepturi fuga nihil dolores iusto deserunt nam quo adipisci necessitatibus ex blanditiis eligendi ab quibusdam earum, odio recusandae neque.</div>
+                       <div class="send">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt quod est assumenda neque temporibus eaque ratione nisi enim, rerum placeat architecto vel quibusdam dolore sed repellat repellendus, animi necessitatibus! Ex.</div>
                     </div>
 
                     <div class="send-message flex">
