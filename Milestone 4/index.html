@@ -77,7 +77,7 @@
                     <div class="user-card flex">
                         <!-- img e nome dell'utente in chat -->
                         <div class="user-img flex">
-                            <img src="./img/avatar_io.jpg" alt="user-image">
+                            <img :src="`img/avatar${contacts[currentElement].avatar}.jpg`" alt="user-image">
                              <!-- sender container -->
                             <div class="sender-container">
                                 <div class="name">{{contacts[currentElement].name}} </div>
