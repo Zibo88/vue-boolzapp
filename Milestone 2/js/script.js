@@ -91,6 +91,7 @@ var app = new Vue (
                 },
             ]
         },
+        
         methods:{
             changeIndex(index){
                 this.currentElement = index
