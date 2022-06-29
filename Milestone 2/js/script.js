@@ -3,7 +3,8 @@ var app = new Vue (
     {
         el:'#root',
         data: {
-            
+            currentElement: 0,
+            newMessage: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -91,7 +92,35 @@ var app = new Vue (
             ]
         },
         methods:{
-            
+            changeIndex(index){
+                this.currentElement = index
+            },
+
+           addMessage(currentElement){
+               this.contacts[currentElement].messages.push(
+                   {
+                    date: '10/01/2020 15:50:00',
+                    text: this.newMessage,
+                    status: 'sent'
+                   }
+
+               )
+               this.newMessage = '';
+
+               setTimeout(() =>{
+                    
+                 this.contacts[currentElement].messages.push(
+                     {
+                        
+                        date: '10/01/2020 15:50:00',
+                        text: 'ok',
+                        status: 'received'
+                        
+                     }
+                 )
+                
+               }, 1000)
+           }
         }
     }
 )

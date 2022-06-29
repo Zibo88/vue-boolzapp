@@ -157,13 +157,15 @@ i{
     border-radius: 50%;
 }
 
+.chat-card.flex:hover{
+    background-color: lightgray;
+}
+
 .chat-user{
     padding-left: 0.5rem;
+    cursor: pointer;
 }
 
-.wtf.flex{
-
-}
 
 /* COLONNA GRANDE */
 
@@ -176,7 +178,7 @@ i{
 }
 
 .sender-container{
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
     justify-content: center;
     padding-left: 10px;
@@ -203,7 +205,7 @@ i{
 }
 
 /* messaggi */
-.send{
+.sent{
     background-color: #d5f9ba;
     max-width: 55%;
     min-width: 10%;

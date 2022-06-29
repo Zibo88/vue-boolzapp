@@ -60,12 +60,12 @@
                         <input id="search-barr" type="text" placeholder="Cerca nella chat">
                     </div>
                     <!-- chat -->
-                    <div v-for="singleObject in contacts" class="chat-card flex">
+                    <div v-for="(singleObject, index) in contacts" class="chat-card flex" @click="changeIndex(index)">
                         <div class="chat-square">
                             <img class="avatar-img" :src="'img/avatar' + singleObject.avatar + '.jpg'" alt="utente">
                         </div>
                         <!-- nome utente -->
-                        <div class="chat-user">{{singleObject.name}}</div>  
+                        <div  class="chat-user">{{singleObject.name}}</div>  
                     </div>
                </div>
 
@@ -76,9 +76,10 @@
                         <div class="user-img flex">
                             <img src="./img/avatar_io.jpg" alt="user-image">
                              <!-- sender container -->
-                            <div class="sender-container flex">
-                                <div class="name">[Nome utente]</div> 
-                                <div class=" last-access text">ultimo accesso oggi alle </div>
+                            <div  class="sender-container flex">
+                                <div v-for="(singleName,index) in contacts[currentElement].name"  class="name">{{singleName}} </div>
+                                
+                                <div class="last-access text">ultimo accesso oggi alle </div>
                             </div>   
                         </div>
                         <!-- icone -->
@@ -90,42 +91,16 @@
                     </div>
                     
                     
-                    <div class="chat-window flex">
-                        
+                    <div class="chat-window flex" >
                         <!-- da cambiare -->
-                        
-                        
-                       <div class="send">
-                           <div class="message-text">
-                           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores porro voluptatum corporis commodi, officiis quidem! Officiis ducimus numquam possimus et consequatur molestias omnis debitis, quae, tempora ea fugiat ipsum in?
-                           </div>
-                           <div class="date">
-                            [date]
-                           </div>
-                       </div>
-                       
-                       <div class="received">
-                            <div class="message-text">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ea at sequi neque delectus ut non reiciendis, doloribus obcaecati ullam laudantium repellendus repudiandae culpa optio doloremque facere rem excepturi. Aut.
-                            </div>
-                            <div class="date">
-                                [date]
-                            </div>
-                       </div>
-
-                       <div class="send">
-                            <div class="message-text">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam dignissimos quidem explicabo optio repudiandae, tempora nihil reprehenderit reiciendis, debitis voluptate aliquid tenetur eum est eaque nam pariatur, adipisci possimus nostrum?
-                            </div>
-                            <div class="date">
-                                [date]
-                            </div>
-                       </div>
+                        <div class="message-text"  v-for="(message,index) in contacts[currentElement].messages"  :class="message.status === 'sent' ? 'sent' : 'received'"> 
+                            {{message.text}}
+                        </div>
                     </div>
 
                     <div class="send-message flex">
                         <i id="smile" class="fas fa-smile"></i>
-                        <input type="text" name="" id="message-bar" placeholder="Scrivi un messagio">
+                        <input v-model="newMessage" type="text" id="message-bar" placeholder="Scrivi un messagio" @keyup.enter="addMessage(currentElement)" >
                         <i id="microphone" class="fas fa-microphone"></i>
                     </div>
                     
