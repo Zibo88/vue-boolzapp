@@ -101,9 +101,10 @@ var app = new Vue (
            addMessage(currentElement){
             let currentDate = new Date().toLocaleDateString();
             let currentHours = new Date().toLocaleTimeString();
+            let finalDate = currentHours + '' + '-' + currentDate;
                this.contacts[currentElement].messages.push(
                    {
-                    date: currentDate + '' + currentHours,
+                    date: finalDate,
                     text: this.newMessage,
                     status: 'sent'
                    }
@@ -114,10 +115,11 @@ var app = new Vue (
                setTimeout(() =>{
                 let currentDate = new Date().toLocaleDateString();
                 let currentHours = new Date().toLocaleTimeString();
+                let finalDate = currentHours + '' + '-' + currentDate;
                  this.contacts[currentElement].messages.push(
                     {
                         
-                        date: currentDate + '' + currentHours,
+                        date: finalDate,
                         text: 'ok',
                         status: 'received'
                         
