@@ -96,8 +96,11 @@
 
                     <!--  finestra chat -->
                     <div class="chat-window flex" >
-                        <div class="message-text"  v-for="(message,index) in contacts[currentElement].messages"  :class="message.status === 'sent' ? 'sent' : 'received'">
-                            {{message.text}}
+                        <div class="message-text" v-for="(message,index) in contacts[currentElement].messages"  :class="message.status === 'sent' ? 'sent' : 'received'">
+                            {{message.text}} 
+                            <div class="date">
+                                {{message.date}}
+                            </div>
                         </div>
                     </div>
 

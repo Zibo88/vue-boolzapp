@@ -148,7 +148,6 @@ i{
     margin: 0.1rem 0;
     background-color: white;
     flex-grow: 1;
-    
 }
 
 .overflow-container.flex{
@@ -171,7 +170,6 @@ i{
     cursor: pointer;
 }
 
-
 /* COLONNA GRANDE */
 
 .chat-window {
@@ -188,7 +186,6 @@ i{
     justify-content: center;
     padding-left: 10px;
 } 
-
 
 
 .send-message.flex{
@@ -211,19 +208,20 @@ i{
 .sent{
     background-color: #d5f9ba;
     max-width: 55%;
-    min-width: 10%;
+    min-width: 20%;
     margin: 1rem 0;
     padding: 0.7rem;
     align-self: flex-end;
     margin-right: 0.3rem;
     border-radius: 10px;
     position: relative;
+    
 }
 
 .received {
     background-color: white;
     max-width: 55%;
-    min-width: 10%;
+    min-width: 20%;
     margin: 1rem 0;
     padding: 0.7rem;
     align-self: flex-start;
@@ -234,13 +232,15 @@ i{
 
 .message-text{
     padding-bottom: 20px;
+    overflow-wrap: break-word;
 }
 
 .date{
     position: absolute;
     right: 0;
     bottom: 0;
-    padding: 10px 20px 10px 0;
+    font-size: 10px;
+    padding-right: 10px;
 }
 
 

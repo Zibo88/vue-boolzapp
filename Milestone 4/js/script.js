@@ -99,9 +99,11 @@ var app = new Vue (
             },
             // creo una funzione per aggiungere un messaggio all'array messages
            addMessage(currentElement){
+            let currentDate = new Date().toLocaleDateString();
+            let currentHours = new Date().toLocaleTimeString();
                this.contacts[currentElement].messages.push(
                    {
-                    date: '10/01/2020 15:50:00',
+                    date: currentDate + '' + currentHours,
                     text: this.newMessage,
                     status: 'sent'
                    }
@@ -110,11 +112,12 @@ var app = new Vue (
                this.newMessage = '';
                 // aggiungo una funzione che invia in messaggio(in realtà tutto l'oggetto del messaggio) e lo pusha nell'array messages
                setTimeout(() =>{
-                    
+                let currentDate = new Date().toLocaleDateString();
+                let currentHours = new Date().toLocaleTimeString();
                  this.contacts[currentElement].messages.push(
                     {
                         
-                        date: '10/01/2020 15:50:00',
+                        date: currentDate + '' + currentHours,
                         text: 'ok',
                         status: 'received'
                         
