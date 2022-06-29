@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <!-- vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Milestone1</title>
+
+</head>
+<body>
+    <div id="root">
+        <div class="screen-container">
+            <!-- container dell'app -->
+            <div class="app-container flex">
+                <!-- colonna piccola -->
+               <div class="small-column flex">
+                    <!-- nome utente -->
+                    <div class="user-card flex">
+                       <div class="user-img flex">
+                            <img src="./img/avatar_io.jpg" alt="user-image">
+                            <div class="name">Vincenzo</div>
+                       </div>
+                       <div class="icon-container flex">
+                        <i class="far fa-circle"></i>
+                        <i class="fas fa-comment-alt"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                       </div>
+                       
+                    </div>
+
+                    <!-- attivare le notifiche -->
+                    <div class="notification flex">
+                        <div id="notification-square">
+                            <i class="fas fa-bell-slash"></i>
+                        </div>
+                        
+                        <div class="container-notification">
+                            <div class="bold">
+                                Ricevi notifiche dei nuovi messaggi
+                            </div>
+                           
+                            <div id="notification-on-off">
+                                <a class="text" href="#">
+                                    attivita notifiche desktop
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ricerca nella chat -->
+                    <div class="search flex">
+                        <div class="lens">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <input id="search-barr" type="text" placeholder="Cerca nella chat" v-model="contactSearch">
+                    </div>
+                    <!-- chat -->
+                    <div   v-for="(singleObject, index) in contacts" class="chat-card flex" @click="changeIndex(index)">
+                        <div class="chat-square">
+                            <img class="avatar-img" :src="'img/avatar' + singleObject.avatar + '.jpg'" alt="utente">
+                        </div>
+                        <!-- nome utente -->
+                        <div  class="chat-user">{{singleObject.name}}</div>  
+                    </div>
+               </div>
+
+               <!-- COLONNA GRANDE -->
+               <div class="big-column flex">
+                    <div class="user-card flex">
+                        <!-- img e nome dell'utente in chat -->
+                        <div class="user-img flex">
+                            <img src="./img/avatar_io.jpg" alt="user-image">
+                             <!-- sender container -->
+                            <div class="sender-container flex">
+                                <div v-for="(singleName,index) in contacts[currentElement].name"  class="name">{{singleName}} </div>
+                                
+                                <div class="last-access text">ultimo accesso oggi alle </div>
+                            </div>   
+                        </div>
+
+                        <!-- icone -->
+                        <div class="icon-container flex">
+                        <i class="far fa-circle"></i>
+                        <i class="fas fa-comment-alt"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                        </div> 
+                    </div>
+                    
+                    <!--  finestra chat -->
+                    <div class="chat-window flex" >
+                        <div class="message-text"  v-for="(message,index) in contacts[currentElement].messages"  :class="message.status === 'sent' ? 'sent' : 'received'"> 
+                            {{message.text}}
+                        </div>
+                    </div>
+
+                    <!-- invio messaggi -->
+                    <div class="send-message flex">
+                        <i id="smile" class="fas fa-smile"></i>
+                        <input  v-model="newMessage" type="text" id="message-bar" placeholder="Scrivi un messagio" @keyup.enter="addMessage(currentElement)" >
+                        <i id="microphone" class="fas fa-microphone"></i>
+                    </div>
+                    
+                
+               </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="./js/script.js"></script>
+</body>
+</html>
