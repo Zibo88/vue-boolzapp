@@ -177,16 +177,14 @@ i{
     overflow: auto;
 }
 
-.sender-container{
+ .sender-container{
     flex-direction: row;
     align-items: flex-start;
     justify-content: center;
     padding-left: 10px;
-}
+} 
 
-.name{
-    padding-left: 10px;
-}
+
 
 .send-message.flex{
     background-color: #eaeaea;

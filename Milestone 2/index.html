@@ -76,7 +76,7 @@
                         <div class="user-img flex">
                             <img src="./img/avatar_io.jpg" alt="user-image">
                              <!-- sender container -->
-                            <div  class="sender-container flex">
+                            <div class="sender-container flex">
                                 <div v-for="(singleName,index) in contacts[currentElement].name"  class="name">{{singleName}} </div>
                                 
                                 <div class="last-access text">ultimo accesso oggi alle </div>
@@ -90,14 +90,14 @@
                         </div> 
                     </div>
                     
-                    
+                    <!--  finestra chat -->
                     <div class="chat-window flex" >
-                        <!-- da cambiare -->
                         <div class="message-text"  v-for="(message,index) in contacts[currentElement].messages"  :class="message.status === 'sent' ? 'sent' : 'received'"> 
                             {{message.text}}
                         </div>
                     </div>
 
+                    <!-- invio messaggi -->
                     <div class="send-message flex">
                         <i id="smile" class="fas fa-smile"></i>
                         <input v-model="newMessage" type="text" id="message-bar" placeholder="Scrivi un messagio" @keyup.enter="addMessage(currentElement)" >

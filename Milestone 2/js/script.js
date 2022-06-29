@@ -95,7 +95,7 @@ var app = new Vue (
             changeIndex(index){
                 this.currentElement = index
             },
-
+            // creo una funzione per aggiungere un messaggio all'array messages
            addMessage(currentElement){
                this.contacts[currentElement].messages.push(
                    {
@@ -110,16 +110,16 @@ var app = new Vue (
                setTimeout(() =>{
                     
                  this.contacts[currentElement].messages.push(
-                     {
+                    {
                         
                         date: '10/01/2020 15:50:00',
                         text: 'ok',
                         status: 'received'
                         
-                     }
+                    }
                  )
                 
-               }, 1000)
+                }, 1000)
            }
         }
     }
