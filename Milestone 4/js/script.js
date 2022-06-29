@@ -125,7 +125,15 @@ var app = new Vue (
            },
         //    filtro la ricerca in base ai nomi
            filterName(){
-               this.forEach((element) => {
+               this.contacts.forEach((element) => {
+
+                if(this.contacts.name.includes(this.contactSearch)){
+
+                    element.visible = true;
+                    
+                }else{
+                    element.visible = false;
+                }
 
                });
            }

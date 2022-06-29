@@ -30,7 +30,7 @@
                         <i class="fas fa-comment-alt"></i>
                         <i class="fas fa-ellipsis-v"></i>
                        </div>
-                       
+
                     </div>
 
                     <!-- attivare le notifiche -->
@@ -38,12 +38,12 @@
                         <div id="notification-square">
                             <i class="fas fa-bell-slash"></i>
                         </div>
-                        
+
                         <div class="container-notification">
                             <div class="bold">
                                 Ricevi notifiche dei nuovi messaggi
                             </div>
-                           
+
                             <div id="notification-on-off">
                                 <a class="text" href="#">
                                     attivita notifiche desktop
@@ -57,15 +57,15 @@
                         <div class="lens">
                             <i class="fas fa-search"></i>
                         </div>
-                        <input id="search-barr" type="text" placeholder="Cerca nella chat" v-model="contactSearch">
+                        <input id="search-barr" type="text" placeholder="Cerca nella chat" @keyup="filterName()" v-model="contactSearch">
                     </div>
                     <!-- chat -->
-                    <div   v-for="(singleObject, index) in contacts" class="chat-card flex" @click="changeIndex(index)">
+                    <div   v-for="(singleObject, index) in contacts" v-if="singleObject.visible === true" class="chat-card flex" @click="changeIndex(index)">
                         <div class="chat-square">
                             <img class="avatar-img" :src="'img/avatar' + singleObject.avatar + '.jpg'" alt="utente">
                         </div>
                         <!-- nome utente -->
-                        <div  class="chat-user">{{singleObject.name}}</div>  
+                        <div  class="chat-user">{{singleObject.name}}</div>
                     </div>
                </div>
 
@@ -76,11 +76,11 @@
                         <div class="user-img flex">
                             <img src="./img/avatar_io.jpg" alt="user-image">
                              <!-- sender container -->
-                            <div class="sender-container flex">
-                                <div v-for="(singleName,index) in contacts[currentElement].name"  class="name">{{singleName}} </div>
-                                
+                            <div class="sender-container">
+                                <div class="name">{{contacts[currentElement].name}} </div>
+
                                 <div class="last-access text">ultimo accesso oggi alle </div>
-                            </div>   
+                            </div>
                         </div>
 
                         <!-- icone -->
@@ -88,12 +88,12 @@
                         <i class="far fa-circle"></i>
                         <i class="fas fa-comment-alt"></i>
                         <i class="fas fa-ellipsis-v"></i>
-                        </div> 
+                        </div>
                     </div>
-                    
+
                     <!--  finestra chat -->
                     <div class="chat-window flex" >
-                        <div class="message-text"  v-for="(message,index) in contacts[currentElement].messages"  :class="message.status === 'sent' ? 'sent' : 'received'"> 
+                        <div class="message-text"  v-for="(message,index) in contacts[currentElement].messages"  :class="message.status === 'sent' ? 'sent' : 'received'">
                             {{message.text}}
                         </div>
                     </div>
@@ -104,13 +104,13 @@
                         <input  v-model="newMessage" type="text" id="message-bar" placeholder="Scrivi un messagio" @keyup.enter="addMessage(currentElement)" >
                         <i id="microphone" class="fas fa-microphone"></i>
                     </div>
-                    
-                
+
+
                </div>
             </div>
         </div>
     </div>
-    
+
     <script src="./js/script.js"></script>
 </body>
 </html>
