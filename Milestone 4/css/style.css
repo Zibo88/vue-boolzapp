@@ -148,7 +148,12 @@ i{
     margin: 0.1rem 0;
     background-color: white;
     flex-grow: 1;
-    overflow: auto;
+    
+}
+
+.overflow-container.flex{
+    flex-direction: column;
+    overflow: scroll;
 }
 
 .chat-square{
