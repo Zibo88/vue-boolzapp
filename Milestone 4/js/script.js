@@ -108,7 +108,7 @@ var app = new Vue (
 
                )
                this.newMessage = '';
-
+                // aggiungo una funzione che invia in messaggio(in realtà tutto l'oggetto del messaggio) e lo pusha nell'array messages
                setTimeout(() =>{
                     
                  this.contacts[currentElement].messages.push(
@@ -123,12 +123,14 @@ var app = new Vue (
                 
                 }, 1000)
            },
+           
         //    filtro la ricerca in base ai nomi
            filterName(){
+
                this.contacts.forEach((element) => {
-
-                if(this.contacts.name.includes(this.contactSearch)){
-
+        
+                if(element.name.toLowerCase().includes(this.contactSearch)){
+                    
                     element.visible = true;
                     
                 }else{

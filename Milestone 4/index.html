@@ -60,13 +60,16 @@
                         <input id="search-barr" type="text" placeholder="Cerca nella chat" @keyup="filterName()" v-model="contactSearch">
                     </div>
                     <!-- chat -->
-                    <div   v-for="(singleObject, index) in contacts" v-if="singleObject.visible === true" class="chat-card flex" @click="changeIndex(index)">
-                        <div class="chat-square">
-                            <img class="avatar-img" :src="'img/avatar' + singleObject.avatar + '.jpg'" alt="utente">
+                    <div class="overflow-container flex">
+                        <div   v-for="(singleObject, index) in contacts" v-if="singleObject.visible === true" class="chat-card flex" @click="changeIndex(index)">
+                            <div class="chat-square">
+                                <img class="avatar-img" :src="'img/avatar' + singleObject.avatar + '.jpg'" alt="utente">
+                            </div>
+                            <!-- nome utente -->
+                            <div  class="chat-user">{{singleObject.name}}</div>
                         </div>
-                        <!-- nome utente -->
-                        <div  class="chat-user">{{singleObject.name}}</div>
                     </div>
+                   
                </div>
 
                <!-- COLONNA GRANDE -->
@@ -104,7 +107,6 @@
                         <input  v-model="newMessage" type="text" id="message-bar" placeholder="Scrivi un messagio" @keyup.enter="addMessage(currentElement)" >
                         <i id="microphone" class="fas fa-microphone"></i>
                     </div>
-
 
                </div>
             </div>
