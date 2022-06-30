@@ -106,15 +106,15 @@
                             >
                             {{message.text}} 
                             <!-- freccia giu -->
-                            <i  @click="curtain(index)" class="fa-solid fa-chevron-down"></i>
+                            <i @click="curtain(index)" class="fa-solid fa-chevron-down"></i>
                             <div class="date">
                                 {{message.date}}
                             </div>
-                            <div class="curtain-menu"   >
-                                <div class="info">
+                            <div class="curtain-menu" v-if="currentMessage === index && showMenu">
+                                <div  class="info">
                                     Info message
                                 </div>
-                                <a href="#" class="delete">
+                                <a href="#"  @click="remove(index)" class="delete">
                                     Delete
                                 </a>
                             </div>

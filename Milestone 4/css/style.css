@@ -271,7 +271,7 @@ i{
 
 /* da risolvere */
 
-.bcg-grey {
+.chat-card.flex.bcg-grey {
     background-color: grey;
     color: blue;
 }
@@ -282,7 +282,7 @@ i{
     width: 100px;
     height: 70px;
     background-color: white;
-    display: none;
+    /* display: none; */
     z-index: 1;
     position: absolute;
     right: 45px;

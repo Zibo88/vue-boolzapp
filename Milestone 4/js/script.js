@@ -6,6 +6,7 @@ var app = new Vue (
             
             currentElement: 0,
             currentMessage: 0,
+            showMenu: false,
             newMessage: '',
             contactSearch: '',
             contacts: [
@@ -13,7 +14,6 @@ var app = new Vue (
                     name: 'Michele',
                     avatar: '_1',
                     visible: true,
-                    info: false,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -155,13 +155,18 @@ var app = new Vue (
            },
 
            curtain(messageIndex){
-             console.log("questo è l'indice del messaggio",messageIndex)
-            
-             
-             
-             
-             
+                console.log("questo è l'indice del messaggio",messageIndex)
+                // modifico lo show menù trasformandolo nel contrario di se stesso
+              this.showMenu = !this.showMenu
+              // modifico currentMessase e gli assegno il valore dell'indece del messaggio
+              this.currentMessage = messageIndex
            },
+
+        //    elimino i messaggi dalla chat
+           remove(messageIndex){
+               console.log(messageIndex)
+            this.contacts[this.currentElement].messages.splice(messageIndex, 1)
+           }
 
            
            
