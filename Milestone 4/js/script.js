@@ -156,16 +156,20 @@ var app = new Vue (
 
            curtain(messageIndex){
                 console.log("questo è l'indice del messaggio",messageIndex)
-                // modifico lo show menù trasformandolo nel contrario di se stesso
-              this.showMenu = !this.showMenu
+              
               // modifico currentMessase e gli assegno il valore dell'indece del messaggio
               this.currentMessage = messageIndex
+
+                // modifico lo show menù trasformandolo nel contrario di se stesso
+                this.showMenu = !this.showMenu
            },
 
         //    elimino i messaggi dalla chat
            remove(messageIndex){
                console.log(messageIndex)
             this.contacts[this.currentElement].messages.splice(messageIndex, 1)
+            // modifico lo show menù trasformandolo nel contrario di se stesso
+            this.showMenu = !this.showMenu
            }
 
            
