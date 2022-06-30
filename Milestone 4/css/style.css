@@ -163,7 +163,7 @@ i{
 
 .chat-card.flex:hover{
     background-color: lightgray;
-}
+} 
 
 .chat-user{
     padding-left: 0.5rem;
@@ -233,6 +233,20 @@ i{
 .message-text{
     padding-bottom: 20px;
     overflow-wrap: break-word;
+    position: relative;
+    padding-right: 25px;
+}
+
+.message-text i{
+    position: absolute;
+    top:0.5rem;
+    right: 0.5rem;
+    font-size: 10px;
+    display: none;
+}
+
+.message-text:hover i{
+    display: block;
 }
 
 .date{
@@ -241,6 +255,24 @@ i{
     bottom: 0;
     font-size: 10px;
     padding-right: 10px;
+}
+
+/* da risolvere */
+
+.bcg-grey {
+    background-color: aquamarine;
+    color: blue;
+}
+
+.curtain-menu{
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    display: none;
+}
+
+.active{
+    display: block;
 }
 
 

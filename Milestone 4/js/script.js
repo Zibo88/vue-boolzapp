@@ -3,6 +3,7 @@ var app = new Vue (
     {
         el:'#root',
         data: {
+            
             currentElement: 0,
             newMessage: '',
             contactSearch: '',
@@ -11,6 +12,7 @@ var app = new Vue (
                     name: 'Michele',
                     avatar: '_1',
                     visible: true,
+                    info: false,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -99,10 +101,12 @@ var app = new Vue (
             },
             // creo una funzione per aggiungere un messaggio all'array messages
            addMessage(currentElement){
-            let currentDate = new Date().toLocaleDateString();
-            let currentHours = new Date().toLocaleTimeString();
-            let finalDate = currentHours + '' + '-' + currentDate;
-               this.contacts[currentElement].messages.push(
+            if(this.newMessage.length > 0){
+                console.log(this.newMessage)
+                let currentDate = new Date().toLocaleDateString();
+                let currentHours = new Date().toLocaleTimeString();
+                let finalDate = currentHours + '' + '-' + currentDate;
+                this.contacts[currentElement].messages.push(
                    {
                     date: finalDate,
                     text: this.newMessage,
@@ -112,7 +116,8 @@ var app = new Vue (
                )
                this.newMessage = '';
                 // aggiungo una funzione che invia in messaggio(in realtà tutto l'oggetto del messaggio) e lo pusha nell'array messages
-               setTimeout(() =>{
+                // uso un'arrow function per permettere al this di essere erditato dallo scope ((addMessage))
+               setTimeout(() => {
                 let currentDate = new Date().toLocaleDateString();
                 let currentHours = new Date().toLocaleTimeString();
                 let finalDate = currentHours + '' + '-' + currentDate;
@@ -127,6 +132,8 @@ var app = new Vue (
                  )
                 
                 }, 1000)
+            }
+
            },
            
         //    filtro la ricerca in base ai nomi
@@ -143,7 +150,24 @@ var app = new Vue (
                 }
 
                });
-           }
+           },
+
+           curtain(messageIndex){
+             console.log(messageIndex)
+            
+             if(this.contacts[messageIndex].info === true){
+                 console.log(this.contacts[messageIndex].info)
+                this.contacts[messageIndex].info = false
+               
+             }else{
+                this.contacts[messageIndex].info = true
+
+             } ;
+             console.log(' message index', this.contacts[messageIndex].info)
+            
+             
+           },
+           
         }
     }
 )
