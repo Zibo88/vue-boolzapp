@@ -104,7 +104,6 @@ var app = new Vue (
             // creo una funzione per aggiungere un messaggio all'array messages
            addMessage(currentElement){
             if(this.newMessage.length > 0){
-                console.log(this.newMessage)
                 let currentDate = new Date().toLocaleDateString();
                 let currentHours = new Date().toLocaleTimeString();
                 let finalDate = currentHours + '' + '-' + currentDate;
@@ -114,8 +113,8 @@ var app = new Vue (
                     text: this.newMessage,
                     status: 'sent'
                    }
-
                )
+
                this.newMessage = '';
                 // aggiungo una funzione che invia in messaggio(in realtà tutto l'oggetto del messaggio) e lo pusha nell'array messages
                 // uso un'arrow function per permettere al this di essere erditato dallo scope ((addMessage))
@@ -125,14 +124,12 @@ var app = new Vue (
                 let finalDate = currentHours + '' + '-' + currentDate;
                  this.contacts[currentElement].messages.push(
                     {
-                        
                         date: finalDate,
                         text: 'ok',
                         status: 'received'
                         
                     }
-                 )
-                
+                 )           
                 }, 1000)
             }
 
@@ -140,9 +137,8 @@ var app = new Vue (
            
         //    filtro la ricerca in base ai nomi
            filterName(){
-
                this.contacts.forEach((element) => {
-        
+                
                 if(element.name.toLowerCase().includes(this.contactSearch)){
                     
                     element.visible = true;
@@ -150,13 +146,10 @@ var app = new Vue (
                 }else{
                     element.visible = false;
                 }
-
                });
            },
 
            curtain(messageIndex){
-                console.log("questo è l'indice del messaggio",messageIndex)
-              
               // modifico currentMessase e gli assegno il valore dell'indece del messaggio
               this.currentMessage = messageIndex
 
@@ -171,9 +164,6 @@ var app = new Vue (
             // modifico lo show menù trasformandolo nel contrario di se stesso
             this.showMenu = !this.showMenu
            }
-
-           
-           
         }
     }
 )
