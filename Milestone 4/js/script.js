@@ -5,6 +5,7 @@ var app = new Vue (
         data: {
             
             currentElement: 0,
+            currentMessage: 0,
             newMessage: '',
             contactSearch: '',
             contacts: [
@@ -98,6 +99,7 @@ var app = new Vue (
         methods:{
             changeIndex(index){
                 this.currentElement = index
+                
             },
             // creo una funzione per aggiungere un messaggio all'array messages
            addMessage(currentElement){
@@ -153,20 +155,15 @@ var app = new Vue (
            },
 
            curtain(messageIndex){
-             console.log(messageIndex)
-            
-             if(this.contacts[messageIndex].info === true){
-                 console.log(this.contacts[messageIndex].info)
-                this.contacts[messageIndex].info = false
-               
-             }else{
-                this.contacts[messageIndex].info = true
-
-             } ;
-             console.log(' message index', this.contacts[messageIndex].info)
+             console.log("questo è l'indice del messaggio",messageIndex)
             
              
+             
+             
+             
            },
+
+           
            
         }
     }

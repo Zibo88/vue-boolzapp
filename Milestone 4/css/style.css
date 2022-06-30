@@ -78,7 +78,7 @@ i{
 
 .user-img.flex img{
     width: 40px;
-    border-radius: 50%; 
+    border-radius: 50%;
 }
 
 .name{
@@ -93,7 +93,7 @@ i{
 
 .icon-container.flex i{
     padding-right: 0.5rem;
-    color: #b1b1b1;   
+    color: #b1b1b1;
 }
 
 /* notifiche */
@@ -121,7 +121,7 @@ i{
 }
 
 #notification-on-off .text{
-    color:#4e7484;  
+    color:#4e7484;
 }
 
 /* ricerca nella chat */
@@ -162,8 +162,8 @@ i{
 }
 
 .chat-card.flex:hover{
-    background-color: lightgray;
-} 
+    /* background-color: lightgray; */
+}
 
 .chat-user{
     padding-left: 0.5rem;
@@ -185,7 +185,7 @@ i{
     align-items: flex-start;
     justify-content: center;
     padding-left: 10px;
-} 
+}
 
 
 .send-message.flex{
@@ -215,7 +215,7 @@ i{
     margin-right: 0.3rem;
     border-radius: 10px;
     position: relative;
-    
+
 }
 
 .received {
@@ -243,10 +243,22 @@ i{
     right: 0.5rem;
     font-size: 10px;
     display: none;
+
 }
 
 .message-text:hover i{
     display: block;
+}
+
+.info {
+    padding: 5px 3px 10px 2px;
+}
+
+.delete{
+    border-top: 1px solid black;
+    padding: 3px 3px 5px 2px;
+    text-decoration: none;
+    color: black;
 }
 
 .date{
@@ -260,19 +272,29 @@ i{
 /* da risolvere */
 
 .bcg-grey {
-    background-color: aquamarine;
+    background-color: grey;
     color: blue;
 }
 
+/* ///////////////////////////////// */
+
 .curtain-menu{
     width: 100px;
-    height: 100px;
+    height: 70px;
     background-color: white;
     display: none;
+    z-index: 1;
+    position: absolute;
+    right: 45px;
+    top: 100%;
 }
 
 .active{
     display: block;
+    z-index: 1;
+    position: absolute;
+    right: 45px;
+    top: 100%;
 }
 
 

@@ -106,21 +106,17 @@
                             >
                             {{message.text}} 
                             <!-- freccia giu -->
-                            <i @click="curtain(currentElement)" class="fa-solid fa-chevron-down">
-                               
-                            </i>
-
-                            <div class="curtain-menu" :class="{'active': contacts[currentElement].info === true}">
+                            <i  @click="curtain(index)" class="fa-solid fa-chevron-down"></i>
+                            <div class="date">
+                                {{message.date}}
+                            </div>
+                            <div class="curtain-menu"   >
                                 <div class="info">
                                     Info message
                                 </div>
-                                <div class="delete">
+                                <a href="#" class="delete">
                                     Delete
-                                </div>
-                            </div>
-                           
-                            <div class="date">
-                                {{message.date}}
+                                </a>
                             </div>
                         </div>
                       
